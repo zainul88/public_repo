@@ -1,0 +1,74 @@
+
+
+import java.util.*;
+
+import java.lang.*;
+
+import java.io.*;
+
+public class Codechef
+{
+	
+	public static void main (String[] args) throws java.lang.Exception{
+	    
+		int[] input = {4,3,1};
+	    
+		System.out.println(trapWater(input));
+	    
+		
+	
+}
+	
+	
+
+public static int trapWater(int[] input){
+	    
+int low = 0, high = input.length-1;
+	    
+int lmax = 0, rmax = 0;
+	    
+int result = 0;
+	   
+ while(low < high){
+	        
+	        
+	if(input[low] < input[high]){
+	            
+		if(input[low] > lmax){
+	                
+			lmax = input[low];
+	              
+	            
+		} else {
+	              
+ 			result += lmax - input[low]; 
+	            
+		}
+	           
+		low++; 
+	        
+	} else {
+	            
+		if(input[high] > rmax){
+	                
+			rmax = input[high];
+	            
+		} else {
+	               
+ 		result += rmax - input[high];
+	            
+		}
+	            
+		high--;
+	        
+	}
+	        
+	    
+	}
+	    
+	return result;
+	
+}
+
+
+}
